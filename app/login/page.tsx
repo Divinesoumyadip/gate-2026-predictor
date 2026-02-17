@@ -8,7 +8,7 @@ import { toast } from "sonner";
 import Link from "next/link";
 
 const HeroScene = lazy(() =>
-  import("@/components/three/HeroScene").then((m) => ({ default: m.HeroScene }))
+  import("@/components/three/HeroScene").then((m) => ({ default: m.default }))
 );
 
 type Mode = "login" | "signup";
