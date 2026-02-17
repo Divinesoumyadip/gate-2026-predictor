@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import React, { useState, useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { BRANCHES, calculateAIR } from '../lib/predict';
@@ -54,7 +54,7 @@ export default function UltimatePage() {
   const handleAutoCalculate = () => {
     if (!url) return;
     setIsParsing(true);
-    setParseStatus('Fetching TCS iON Response Sheet...');
+    setParseStatus('Fetching GATE CS / GOAPS Response Sheet...');
     
     // Simulate the Backend Scraping Process
     setTimeout(() => setParseStatus('Extracting Chosen Options...'), 800);
@@ -132,7 +132,7 @@ export default function UltimatePage() {
                   </div>
                 ) : (
                   <div className="animate-in zoom-in duration-300">
-                    <input type="url" placeholder="Paste TCS iON Response Link..." value={url} onChange={(e) => setUrl(e.target.value)} disabled={isParsing} className="w-full bg-white/5 border border-white/10 rounded-2xl p-6 text-center outline-none focus:border-cyan-500 transition-all mb-6 text-sm" />
+                    <input type="url" placeholder="Paste GATE CS / GOAPS Response Link..." value={url} onChange={(e) => setUrl(e.target.value)} disabled={isParsing} className="w-full bg-white/5 border border-white/10 rounded-2xl p-6 text-center outline-none focus:border-cyan-500 transition-all mb-6 text-sm" />
                     
                     <button onClick={handleAutoCalculate} disabled={isParsing || !url} className={`w-full py-6 rounded-2xl font-black text-xl transition-all ${isParsing ? 'bg-white/10 text-gray-400' : 'bg-cyan-500 text-black shadow-[0_0_30px_rgba(0,245,255,0.3)] hover:bg-cyan-400'}`}>
                       {isParsing ? 'Processing...' : 'Auto-Calculate Marks'}
