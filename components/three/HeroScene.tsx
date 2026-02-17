@@ -156,7 +156,9 @@ function ConnectionLines() {
         const points = [pair[0], pair[1]];
         const geometry = new THREE.BufferGeometry().setFromPoints(points);
         return (
-          <line key={i} geometry={geometry}>
+          {/* @ts-ignore */}
+            <line key={i} geometry={geometry}>
+            {/* @ts-ignore */}
             <lineBasicMaterial
               color="#00F5FF"
               transparent
